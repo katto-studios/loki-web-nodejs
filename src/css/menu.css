@@ -1,0 +1,16 @@
+.menu{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 30px;
+}
+
+.menu a{
+	margin: auto;
+	text-align: center;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+.menu a i{
+	font-size: 30px;
+}

@@ -1,0 +1,152 @@
+body{
+    display: grid;
+}
+.inventory-page{
+    margin: auto;
+    height:100vh;
+    display: grid;
+	grid-template-columns: 700px auto;
+    max-width: 1550px;
+    width: 100vw;
+    margin-top: 60px;
+}
+
+.selected-item h1{
+	font-size: 40px;
+}
+
+.temp{
+	margin: auto;
+}
+
+.bottom-nav{
+    position: absolute;
+    bottom: 10px;
+    left: calc(50% - 135px);
+    margin:0 0 10px;
+    padding: 10px;
+    background-color: var(--c1);
+    z-index: 100;
+    border-radius: 10px;
+}
+
+.bottom-nav a{
+    
+    color: var(--c2);
+    padding: 0 10px;
+    text-decoration:none;
+    font-weight: 700;
+    font-size:13px;
+}
+
+.inventory{
+    padding: 20px;
+    display: inline-grid;
+    overflow-y: scroll;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fill, 300px);
+    grid-column-gap: 10px;
+	grid-row-gap: 20px;
+}
+
+.inventory .inventory-item{
+
+    background-color: var(--c3);
+}
+
+.inventory-item{
+    border-radius: 20px;
+    width: 190px;
+    height: 240px;
+    margin: auto;
+    padding: 30px;
+	transition: 0.25s;
+	position: relative;
+}
+
+.inventory-item:hover{
+    box-shadow: 0 0 20px var(--c1);
+}
+
+.item-image{
+    background-color: transparent;
+    text-align: center;
+    height: calc(100% - 30px);
+	display: grid;
+}
+
+.inventory-item h1{
+	background-color: transparent;
+	font-size: 18px;
+}
+
+.item-image img{
+    width: 50%;
+	margin: auto;
+	
+	z-index: 1;
+}
+
+.keyboard-section{
+	margin: auto;
+}
+
+.inventory-item .keycap{
+	position: absolute;
+	width: 37px;
+	height: 42px;
+	padding: 3px 13px 10px 0;
+	top: calc(50% - 28px);
+	left: calc(50% - 23px);
+	
+	z-index: 0.5;
+}
+
+.inventory-item .case-icon{
+	position: absolute;
+	background-image: url("../res/case-icon.svg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-blend-mode:multiply;
+    width: 75px;
+	height: 18.5px;
+	padding: 3px 13px 10px 0;
+	top: calc(50% - 28px);
+	left: calc(50% - 44.5px);
+
+	z-index: 0.5;
+}
+
+.inventory-item .theme-icon{
+    position: absolute;
+	background-image: url("../res/paint-brush.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-blend-mode:multiply;
+    width: 50px;
+	height: 20px;
+	padding: 3px 13px 10px 0;
+	top: calc(50% - 28px);
+	left: calc(50% - 36px);
+
+	z-index: 0.5;
+}
+
+.inventory-item .fav-star{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 25px;
+    color: var(--c1);
+}
+
+.inventory-item p{
+	font-size: 8px;
+}
+
+.inventory:after{
+    content: "";
+    display: block;
+    height: 50px;
+    width: 100%;
+}

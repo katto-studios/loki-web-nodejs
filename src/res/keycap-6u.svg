@@ -1,0 +1,5 @@
+<svg preserveAspectRatio="none" id="keycap" xmlns="http://www.w3.org/2000/svg" width="363" height="64.5" viewBox="0 0 363 64.5">
+  <path id="Path_1" data-name="Path 1" d="M0-.5H9.75L310.193,0,363,3.667V64H0Z" transform="translate(0 0.5)" fill="#d1d1d1"/>
+  <path id="Path_2" data-name="Path 2" d="M-1.125-52.875H6V11L-2.417,2.917Z" transform="translate(357 53.5)" fill="#bebebe"/>
+  <rect id="Rectangle_2" data-name="Rectangle 2" width="353" height="56" rx="4" transform="translate(5 0.5)" fill="#fff"/>
+</svg>

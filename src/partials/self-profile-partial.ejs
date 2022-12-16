@@ -1,0 +1,82 @@
+<link href="css/profile.css" rel="stylesheet">
+<div class="profile-container">
+    <img id="profile-image">
+    <h1 id="username">
+        USER_NAME
+        <i class="far fa-edit"></i>
+    </h1>
+    <h2 id="description">DESC</h2>
+    <p id="userId">UID</p>
+    <p id="status">STATUS</p>
+    <br>
+    <div class="stats">
+        <h1 id="highest-score">
+        </h1>
+        
+        <p>MAX SCORE</p>
+    </div>
+
+    <div class="stats"> 
+        <h1 id="average-score">
+        </h1>
+        
+        <p>AVG SCORE</p>
+    </div>
+
+    <div class="stats">
+        <h1 id="highest-wpm"> 
+        </h1>
+        
+        <p>MAX WPM</p>
+    </div>
+    
+    <div class="stats">
+        <h1 id="average-wpm">
+        </h1>
+        <p>AVG WPM</p>
+    </div>
+    <br>
+    <br>
+    <%- include('./keyboard') %>
+</div>
+
+<div class="modal micromodal-slide noselect" id="modal-edit-username" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1">
+        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+            <header class="modal__header">
+                <h1 class="modal__title" id="modal-1-title">
+                    Edit username
+                </h1>
+                <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+            </header>
+            <main class="modal__content" id="modal-1-content">
+                <input id="new-name-input">
+            </main>
+            <footer class="modal__footer">
+                <button class="modal__btn" onclick="finalizeNameEdit()">Save</button>
+                <button class="modal__btn" data-micromodal-close>Cancel</button>
+            </footer>
+        </div>
+    </div>
+</div>
+
+<div class="modal micromodal-slide noselect" id="modal-edit-description" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1">
+        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+            <header class="modal__header">
+                <h1 class="modal__title" id="modal-1-title">
+                    Edit description
+                </h1>
+                <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+            </header>
+            <main class="modal__content" id="modal-1-content">
+                <input id="new-description-input">
+            </main>
+            <footer class="modal__footer">
+                <button class="modal__btn" onclick="finalizeDescriptionEdit()">Save</button>
+                <button class="modal__btn" data-micromodal-close>Cancel</button>
+            </footer>
+        </div>
+    </div>
+</div>
+<script src='js/self-profile-script.js'></script>

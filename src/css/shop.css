@@ -1,0 +1,17 @@
+#modal-shop .modal__overlay .modal__container{
+    max-width: 1000px;
+}
+
+#modal-shop-content{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 25px;
+}
+
+.shop-item{
+    width: 150px;
+    height: 150px;
+    background-color: var(--c3);
+    border-radius: 15px;
+    text-align: center;
+}

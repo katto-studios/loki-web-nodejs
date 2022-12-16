@@ -1,0 +1,37 @@
+<div class="modal micromodal-slide" id="modal-redeem-code" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1">
+        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-redeem-code-title">
+            <header class="modal__header">
+                <h1 class="modal__title" id="modal-redeem-code-title">
+                    Redeem code
+                </h1>
+                <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+            </header>
+            <main class="modal__content" id="redeem-code-content" aria-autocomplete="false">
+                <input id="redeem-code-input" autocomplete="false">
+            </main>
+            <footer class="modal__footer">
+                <button class="modal__btn" id="redeem-code-button" onclick="redeemCode()">Redeem</button>
+            </footer>
+        </div>
+    </div>
+</div>
+
+<div class="modal micromodal-slide" id="modal-redeem-code-result" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1">
+        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-redeem-code-result-title">
+            <header class="modal__header">
+                <h1 class="modal__title" id="modal-redeem-code-result-title">
+                    Redeem code
+                </h1>
+                <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+            </header>
+            <main class="modal__content" id="redeem-code-result-content" style="color: var(--c1);">
+                <p id="redeem-code-result-content"></p>
+            </main>
+            <footer class="modal__footer">
+                <button class="modal__close" aria-label="Close modal" data-micromodal-close>Close</button>
+            </footer>
+        </div>
+    </div>
+</div>

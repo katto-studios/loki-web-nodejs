@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "commonjs",
+        "watch": true,
+        "lib": ["DOM", "ES6"],
+        "outDir": "server-side-js/js",
+        "baseUrl": "server-side-js"
+    },
+    "include": ["*/*"],
+    "exclude": ["server-side-js/types"],
+}

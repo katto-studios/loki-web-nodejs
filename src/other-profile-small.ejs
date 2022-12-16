@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+		<link href="css/master.css" rel="stylesheet">
+		<link href="css/profile.css" rel="stylesheet">
+		<link href="css/micromodal.css" rel="stylesheet">
+		<link href="css/keyboard.css" rel="stylesheet">
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<meta name="google-signin-client_id" content="294162208525-24raa61aclkq8vofaqnbslpcs6rr1tq8.apps.googleusercontent.com">
+	</head>
+    <body onload="onLoad('<%=userData._id%>')">
+        <div class="other-player-data">
+            <div class = "left">
+			    <img id="profile-image" src="<%=userData.img_url%>">
+                <h3 id="other-name"><%=userData.username%></h3>
+                <h5 id="other-level">Average score: <%=Math.round(userData.total_score / userData.total_games_played)%></h5>
+            </div>
+            <div class="right">
+                <div id="other-keyboard">
+					<%- include('partials/keyboard') %>
+				</div>
+            </div>
+        </div>
+	</body>
+	<script src='js/jquery.js'></script>
+	<script src='js/keyboard-loader.js'></script>
+	<script>
+		var onLoad = (userId) => getAndLoadKeyboardAndTheme(userId)
+	</script>
+</html>

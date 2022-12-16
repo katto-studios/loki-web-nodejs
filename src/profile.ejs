@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+		<link href="css/master.css" rel="stylesheet">
+		<link href="css/profile.css" rel="stylesheet">
+		<link href="css/micromodal.css" rel="stylesheet">
+		<link href="css/keyboard.css" rel="stylesheet">
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<meta name="google-signin-client_id" content="294162208525-24raa61aclkq8vofaqnbslpcs6rr1tq8.apps.googleusercontent.com">
+	</head>
+    <body onload="onLoad('<%=userData._id%>')">
+		<nav>
+			<div>
+				<div class="g-signin2" data-onsuccess="onSignIn"></div>
+			</div>
+			<a class="profile-info" href="#" onclick="switchToGame()"><i class="fas fa-gamepad"></i></a>
+			<a class="profile-info border" id="currency">
+				<i class="fas fa-money-bill border"></i>
+				10 &emsp;
+				<i class="fas fa-cogs"></i> 
+				10
+			</a>
+			<a href="#" class="login profile-info border" id="username-level" onclick="MicroModal.show('modal-logout')">
+				username level
+			</a>
+		</nav>
+
+		<div class="profile-container">
+			<img id="profile-image" src="<%=userData.img_url%>">
+			<h1 id="username">
+                <%=userData.username%>
+            </h1>
+			<h2 id="description">
+                <%= userData.description === '' ? 'No description' : userData.description%>
+            </h2>
+			<p id="status">
+                <%=userData.status%>
+            </p>
+			
+			<div id="friend-status">
+				
+			</div>
+			<br>
+			<div class="stats">
+				<h1 id="highest-score">
+                	<%=scoreData.highestScore%>
+				</h1>
+				
+				<p>MAX SCORE</p>
+			</div>
+
+			<div class="stats"> 
+				<h1 id="average-score">
+					<%=scoreData.avgScore%>
+				</h1>
+				
+				<p>AVG SCORE</p>
+			</div>
+
+			<div class="stats">
+				<h1 id="highest-wpm"> 
+					<%=scoreData.highestWpm%>
+            	</h1>
+				
+				<p>MAX WPM</p>
+			</div>
+			
+			<div class="stats">
+				<h1 id="average-wpm">
+				<%=scoreData.avgWpm%>
+				</h1>
+
+				<p>AVG WPM</p>
+			</div>
+			<br>
+		<br>
+
+		<%- include('partials/keyboard')%>
+		<%- include('partials/profile-modal') %>
+		<footer>
+			<p>Loki - Typing Project Version <%=version%> (open-beta)</p>
+			<p>(c) Copyright <a href="https://katto.studio">Katto Studios LLP</a> (2021)</p>
+		</footer>
+	</body>
+	<script src='js/jquery.js'></script>
+	<script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+	<script src='js/input-reader.js'></script>
+	<script src='js/keyboard-loader.js'></script>
+	<script src="js/nav-bar-script.js"></script>
+    <script src='js/other-profile-script.js'></script>
+</html>

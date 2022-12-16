@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@500&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+		<link href="css/master.css" rel="stylesheet">
+		<link href="css/micromodal.css" rel="stylesheet">
+		<script src="https://www.google.com/recaptcha/api.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<meta name="google-signin-client_id" content="294162208525-24raa61aclkq8vofaqnbslpcs6rr1tq8.apps.googleusercontent.com">
+		<title>LOKI</title>
+		<link rel="icon" type="image/svg+xml" href="./res/keycap.svg">
+		<link rel="mask-icon" href="./res/keycap.svg" color="#ff8a01">
+	</head>
+	<body onload="onLoad()">
+		<div class="loading-screen"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div>
+		<nav>
+			<div>
+				<div class="g-signin2" data-onsuccess="onSignIn"></div>
+			</div>
+			<a class="profile-info" href="#" id="switch-to-game-btn" onclick="switchToGame()"><i class="fas fa-gamepad"></i></a>
+			<a class="profile-info" href="#" id="switch-to-multi-btn" onclick="switchToMultiplayer()"><i class="fas fa-people-arrows"></i></a>
+			<a class="profile-info" href="#" id="switch-to-friends-btn" onclick="switchToFriends()"><i class="fas fa-users"></i></a>
+			<a class="profile-info" href="#" id="switch-to-inven-btn" onclick="switchToInventory()"><i class="fas fa-suitcase"></i></a>
+			<a class="profile-info" href="#" id="switch-to-gacha-btn" onclick="switchToGacha()"><i class="fas fa-store"></i></a>
+			<a class="profile-info" href="#" id="switch-to-leaderboards-btn" onclick="switchToLeaderboards()"><i class="fas fa-award"></i></a>
+			<a class="profile-info border" id="currency">
+				<i class="fas fa-money-bill border"></i>
+				10 &emsp;
+				<i class="fas fa-cogs"></i> 
+				10
+			</a>
+			<a href="#" class="login profile-info border" id="username-level" onclick="MicroModal.show('modal-logout')">
+				username level
+			</a>
+		</nav>
+		<div class="game-view-holder closable">
+			<div class="game-view">
+				<div class="score-bar">
+					<div class="left">
+						<h1 id="time">30s</h1>
+						<div class="meter">
+							<span id="metre-val" style="width: 0%"></span>
+						  </div>
+						<div id="combo">COMBO: 100</div></div>
+					
+					<div id="other-player-small-container" class="right">
+					</div>
+				</div>
+				<br><br>
+				<div class="words noselect" id="words">
+				</div>
+				<br><br>
+
+				<div id="my-keyboard"><%- include('partials/keyboard') %></div>
+			</div>
+		</div>
+
+		<div class="self-profile-partial closable" style="display: none;">
+			<%- include('partials/self-profile-partial') %>
+		</div>
+
+		<div class="friends-partial closable" style="display: none;">
+			<%- include('partials/friends-partial') %>
+		</div>
+
+		<div class="inventory-partial closable" style="display: none;">
+			<%- include('partials/inventory-partial') %>
+		</div>
+
+		<div class="gacha-partial closable" style="display: none;">
+			<%- include('partials/gacha-partial') %>
+		</div>		
+
+		<div class="multiplayer-partial closable" style="display: none;">
+			<%- include('partials/multiplayer-partial') %>
+		</div>
+
+		<div class="leaderboards-partial closable" style="display: none;">
+			<%- include('partials/leaderboard-partial') %>
+		</div>
+
+		<%- include('partials/profile-modal') %>
+		<%- include('partials/shop-partial') %>
+		<%- include('partials/online-friends-modal') %>
+
+		<div class="modal micromodal-slide" id="modal-report" aria-hidden="true">
+			<div class="modal__overlay" tabindex="-1">
+				<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+					<main class="modal__content" id="modal-1-content">
+						<div class="chartContainer noselect"><canvas id="myChart"></canvas></div>
+						<div id="final-score-data"></div>
+						<br>
+						<p>Thanks for playing! Loki-web is currently in open-beta and we would love to hear your suggestions/feedback! if you have any, drop us an email at <a href="mailto:contact@katto.studio">contact@katto.studio</a></p>
+					</main>
+					<footer class="modal__footer">
+						<!-- BIND ONCLICK TO SOMETHING ELSE -->
+						<button id="login" class="modal__btn modal__btn-primary" onclick="reloadGame()">Play Again</button>
+						<button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+					</footer>
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<p>
+				<a href="https://instagram.com/kattostudios" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> 
+				<a href="https://discord.gg/Q5hjZ6MFfS" target="_blank"><i class="fab fa-discord"></i> Discord</a>
+			</p>
+			<p>Loki - Typing Project Version <%=version%> (open-beta)</p>
+			<p>(c) Copyright <a href="https://katto.studio">Katto Studios LLP</a> (2021)</p>
+		</footer>
+		<%- include('partials/popout-partial') %>
+	</body>
+	<script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="js/friend-inviter.js"></script>
+	<script src="js/client-side-socketio.js"></script>
+	<script src='js/jquery.js'></script>
+	<script src='js/game.js'></script>
+	<script src='js/multiplayer-game.js'></script>
+	<script src="js/input-reader.js"></script>
+	<script src="js/nav-bar-script.js"></script>
+	<script src="js/index-script.js"></script>
+	<script src="js/keyboard-loader.js"></script>
+	<script src="js/code-redeemer.js"></script>
+	<script src="js/popup-manager.js"></script> 
+</html>

@@ -1,0 +1,27 @@
+<link href="css/menu.css" rel="stylesheet">
+<div class="modal micromodal-slide" id="modal-logout" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1">
+        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-profile-title">
+            <header class="modal__header">
+                <h1 class="modal__title" id="modal-profile-title">
+                    User
+                </h1>
+                <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+            </header>
+            <main class="modal__content" id="modal-1-content">
+                <section class="menu">
+                    <a onclick="switchToGame()"><i class="fas fa-gamepad"></i><br>Play</a>
+                    <a onclick="switchToProfile()"><i class="fas fa-id-badge"></i><br>Profile</a>
+                    <a onclick="switchToFriends()"><i class="fas fa-users"></i><br>Friends</a>
+                    <a onclick="switchToInventory()"><i class="fas fa-suitcase"></i><br>Inventory</a>
+					<a onclick="switchToGacha()"><i class="fas fa-store"></i><br>Shop</a>
+					<a onclick="openRedeemCodeModal()"><i class="fas fa-gift"></i><br>Redeem</a>
+                </section>
+            </main>
+            <footer class="modal__footer">
+                <button class="modal__btn" onclick="logout()">Logout</button>
+            </footer>
+        </div>
+    </div>
+</div>
+<%- include('./redeem-code-partial') %> 

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="64" viewBox="0 0 180 64">
+  <g id="Rectangle_1" data-name="Rectangle 1" stroke="#707070" stroke-width="1">
+    <rect width="180" height="64" stroke="none"/>
+    <rect x="0.5" y="0.5" width="179" height="63" fill="none"/>
+  </g>
+  <path id="Path_1" data-name="Path 1" d="M23.083,31.574h127L127,54H0Z" transform="translate(15 -16)" fill="#fff"/>
+  <path id="Path_4" data-name="Path 4" d="M25.549,34.265H139.486L122.651,50.9H8.714Z" transform="translate(15 -16)" fill="#9f9f9f"/>
+  <path id="Path_3" data-name="Path 3" d="M150.083,21.459V31.574L127,54V43.835Z" transform="translate(14.959 -5.827)" fill="#7b7b7b"/>
+  <path id="Path_2" data-name="Path 2" d="M0,64.173H127V54H0Z" transform="translate(15 -16)" fill="#c1c1c1"/>
+</svg>

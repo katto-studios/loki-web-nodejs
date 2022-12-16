@@ -1,0 +1,81 @@
+<head>
+    <link href="css/inventory.css" rel="stylesheet">
+</head>
+
+<body>
+    <section class="inventory-page">
+        <section class="keyboard-section">
+			<%- include('./keyboard') %>
+			<section class="selected-item">
+				<h1 class= "item-name">Select Something!</h1>
+                <h3 class= "item-description">Description</h3>
+				<div class="buttons">
+					<button id="equip-button" onclick="equipCurrent()">Equip</button>
+					<button id="cancel-button" onclick="cancelPreview()">Cancel</button>
+                    <button id="favourite-button" onclick="setFavourite()">Favourite</button>
+                    <button id="scrap-button" onclick="confirmScrapItem()">Scrap</button>
+				</div>
+			</section>
+        </section>
+        <section class="inventory">
+            <div class="inventory-item">
+                <div class="item-image"><img src="res/keycap.svg"></div>
+                <h1>Item Name</h1>
+            </div>
+            <div class="inventory-item">
+                <div class="item-image"><img src="res/keycap.svg"></div>
+                <h1>Item Name</h1>
+            </div>
+            <div class="inventory-item">
+                <div class="item-image"><img src="res/keycap.svg"></div>
+                <h1>Item Name</h1>
+            </div>
+            <div class="inventory-item">
+                <div class="item-image"><img src="res/keycap.svg"></div>
+                <h1>Item Name</h1>
+            </div>
+            <div class="inventory-item">
+                <div class="item-image"><img src="res/keycap.svg"></div>
+                <h1>Item Name</h1>
+            </div>
+            <div class="inventory-item">
+                <div class="item-image"><img src="res/keycap.svg"></div>
+                <h1>Item Name</h1>
+            </div>
+            <div class="inventory-item">
+                <div class="item-image"><img src="res/keycap.svg"></div>
+                <h1>Item Name</h1>
+            </div>
+            <div class="inventory-item">
+                <div class="item-image"><img src="res/keycap.svg"></div>
+                <h1>Item Name</h1>
+            </div>
+        </section>
+    </section>
+    
+    <section class="bottom-nav">
+        <a href="#" onclick="showInventoryType(0)">Keycaps</a>
+        <a href="#" onclick="showInventoryType(1)">Cases</a>
+        <a href="#" onclick="showInventoryType(2)">Themes</a>
+    </section>
+
+    <div class="modal micromodal-slide" id="modal-confirm-scrap" aria-hidden="true" style="z-index: 999;">
+        <div class="modal__overlay" tabindex="-1">
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-profile-title">
+                <header class="modal__header">
+                    <h1 class="modal__title">
+                        Really scrap?
+                    </h1>
+                    <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+                </header>
+                <main class="modal__content" id="confirm-display">
+                </main>
+                <footer class="modal__footer" id="confirm-buttons">
+                    <button class="modal__btn" aria-label="Close modal" id="scrap-confirm" onclick="scrapItem()">Confirm</button>
+                    <button class="modal__btn" aria-label="Close modal" data-micromodal-close>Cancel</button>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/inventory-script.js"></script>
